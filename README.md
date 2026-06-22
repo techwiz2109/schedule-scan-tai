@@ -116,42 +116,7 @@ The script requires `requests` and `python-dotenv`.
 pip3 install requests python-dotenv
 ```
 
-### If you get "externally-managed-environment" error (Ubuntu 23.04+)
-
-**Option 1 — Force install (quick):**
-
-```bash
-pip3 install requests python-dotenv --break-system-packages
-```
-
-**Option 2 — Virtual environment (recommended):**
-
-```bash
-# Install venv
-sudo apt install python3-venv -y
-
-# Create virtual environment
-python3 -m venv /home/ubuntu/venv
-
-# Activate it
-source /home/ubuntu/venv/bin/activate
-
-# Install packages
-pip install requests python-dotenv
-
-# Deactivate when done
-deactivate
-```
-
-> **Note:** If using a virtual environment, use the venv Python path in your crontab (see [Scheduling](#scheduling)).
-
-### Freeze dependencies into requirements.txt
-
-```bash
-pip3 freeze > requirements.txt
-```
-
-### Install from requirements.txt on a new machine
+### Install from requirements.txt
 
 ```bash
 pip3 install -r requirements.txt
