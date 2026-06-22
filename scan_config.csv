@@ -1,0 +1,3 @@
+name,targetModelId,optionProfileId,scannerType,selectedScannerAppliance,selectedScannerTags
+Scan - test-rs1,742,,,,
+Scan - test-rs2,74240,7862,EXTERNAL,,
