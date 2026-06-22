@@ -256,10 +256,6 @@ Response saved to scan_78_20260622_125501.json
 
 ### Linux / macOS (cron)
 
-> **Important timezone note:** Cron uses the **server's timezone**, not yours. If your server is in UTC and you are in IST (UTC+5:30), subtract 5 hours 30 minutes from your local time to get the correct cron time.
->
-> Example: 1:03 PM IST = 07:33 UTC → cron entry: `33 7 * * *`
-
 **Find your Python path:**
 
 ```bash
