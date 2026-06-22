@@ -1,6 +1,6 @@
 # Qualys AI Scan Launcher
 
-A Python script that reads scan configurations from a .txt file and automatically launches scans via the Qualys TotalAI API. Credentials are stored securely in a `.env` file. Designed to be scheduled via **cron** (Linux/macOS) or **Task Scheduler** (Windows).
+A Python script that reads scan configurations from a CSV file and automatically launches scans via the Qualys TotalAI API. Credentials are stored securely in a `.env` file. Designed to be scheduled via **cron** (Linux/macOS) or **Task Scheduler** (Windows).
 
 ---
 
