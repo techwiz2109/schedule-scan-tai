@@ -98,7 +98,7 @@ Your project folder should look like this:
 ```
 qualys-scan-launcher/
 ├── launch-scan.py
-├── scan_config.txt
+├── scan_config.csv
 ├── .env
 ├── requirements.txt
 └── .gitignore
@@ -166,34 +166,22 @@ pip3 install -r requirements.txt
 Create a `.env` file in the same directory as the script to store your Qualys credentials and config path securely:
 
 ```bash
-nano /home/ubuntu/.env
+vim /home/ubuntu/.env
 ```
 
 Add the following, replacing values with your actual details:
 
 ```
-QUALYS_BASE_URL=https://gateway.qg1.apps.qualys.ca
-QUALYS_USERNAME=your_qualys_username
-QUALYS_PASSWORD=your_qualys_password
-SCAN_CONFIG_FILE_PATH=/home/ubuntu/scan_config.txt
+QUALYS_USERNAME=<YOUR_QUALYS_USERNAME>
+QUALYS_PASSWORD=<YOUR_QUALYS_PASSWORD>
+QUALYS_BASE_URL=<YOUR_QUALYS_BASE_URL>
+SCAN_CONFIG_FILE_PATH=<YOUR_SCAN_CONFIG_FILE_PATH>
 ```
 
-Save and exit (`Ctrl+O` → Enter → `Ctrl+X` in nano, or `:wq` in vim).
-
-Restrict access to the file so only your user can read it:
-
-```bash
-chmod 600 /home/ubuntu/.env
-```
-
-> **Never commit `.env` to git.** Add it to `.gitignore`:
-> ```bash
-> echo ".env" >> .gitignore
-> ```
-
+Save and exit
 ---
 
-### Scan Config File (scan_config.txt)
+### Scan Config File (scan_config.csv)
 
 This is a CSV file that defines which scans to launch. Each row is one scan.
 
@@ -202,7 +190,7 @@ The path to this file is set via `SCAN_CONFIG_FILE_PATH` in your `.env` file.
 **Create the file:**
 
 ```bash
-nano /home/ubuntu/scan_config.txt
+nano /home/ubuntu/scan_config.csv
 ```
 
 **File format:**
@@ -437,8 +425,8 @@ QUALYS_PASSWORD
 SCAN_CONFIG_FILE_PATH
 ```
 
-**`FileNotFoundError: scan_config.txt`**
-Check that `SCAN_CONFIG_FILE_PATH` in your `.env` file points to the correct absolute path, e.g. `/home/ubuntu/scan_config.txt` (not a typo like `/home/ubunut/`).
+**`FileNotFoundError: scan_config.csv`**
+Check that `SCAN_CONFIG_FILE_PATH` in your `.env` file points to the correct absolute path, e.g. `/home/ubuntu/scan_config.csv` (not a typo like `/home/ubunut/`).
 
 **Cron job not running / log file not created**
 - Verify cron is running: `sudo systemctl status cron`
